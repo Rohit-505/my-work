@@ -12,12 +12,14 @@ class node{
 }
 public class BST {
 	node head;
+	
+	
 	BST(){
 		head=null;
 	}
 	void insert(int v) {
 		node temp=new node(v);
-		node ptr=temp;
+		  node ptr=temp;
 		if(head==null) {
 			head=ptr;
 			System.out.println("key added in root");
@@ -52,4 +54,24 @@ public class BST {
 	}
 	
 
-}
+	public void inorder() {
+		node temp=head;
+		NodeStack s=new NodeStack();
+		while(temp!=null || s.top!=-1) {
+			if(temp!=null) {
+				s.push(temp);
+				temp=temp.left;
+				continue;
+			}
+			else {
+				temp=s.top();
+				System.out.print(temp.data+" ");
+				s.pop();
+				temp=temp.right;
+			}
+		}
+		
+	}
+	
+	
+}// class closed
