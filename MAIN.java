@@ -1,38 +1,26 @@
-package NonLinear;
+package NonLinear;			//driver code for graph representation for "Graph.java"
 import java.util.*;
 public class MAIN{
 	public static void main(String[]args) {
 		
-	//	Scanner sc=new Scanner(System.in);
-		//System.out.println("enter number of vertex");
-		//int v=sc.nextInt();
-		Graph g=new Graph(5);
+		Graph g=new Graph(4);
+		g.addedge("a","b");
+		g.addedge("a","c");
+		g.addedge("a","d");
 		
-			g.AddVertex("A",0);
-			g.AddVertex("B",1);
-			g.AddVertex("C",2);
-			g.AddVertex("D",3);
-			g.AddVertex("E",4);
-			
-			g.AddEdge("A","B");
-			g.AddEdge("A","C");
-			g.AddEdge("A","D");
-			
-			g.AddEdge("B","A");
-			g.AddEdge("B","C");
-			g.AddEdge("B","D");
-			
-			g.AddEdge("C","A");
-			g.AddEdge("C","B");
-			g.AddEdge("C","D");
-			g.AddEdge("C","E");
-			
-			g.AddEdge("E","C");
-			g.AddEdge("E","D");
-			
-			g.getconnection("C");
-			
-			
+		g.addedge("c","a");
+		g.addedge("c","d");
+		g.addedge("c","e");
+		
+		g.addedge("b","a");
+		g.addedge("b","d");
+	
+		g.addedge("d","a");
+		g.addedge("d","c");
+		g.addedge("d","e");
+		g.addedge("d","b");
+		
+		g.getGraph();
 		
 	}
 }
